@@ -11,12 +11,23 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-function createData(team, score, movement) {
-  return { team, score, movement };
+function createData(team, week1, score) {
+  return { team, week1, score };
 }
 
 const rows = [
-  createData('Dru & Sarah', 60, 0),
+  createData('Nat & Jai', 65, 10),
+  createData('Olivia & Toby', 61, 6),
+  createData('Dru & Sarah', 60, 5),
+  createData('Sarah & Mike', 60, 5),
+  createData('Jenni & Dan', 57, 2),
+  createData('Guy & Siân', 53, -2),
+  createData('Charlie & Lynn', 52, -3),
+  createData('Amy & Will', 50, -5),
+  createData('Elliott', 50, -5),
+  createData('Deb & Warren', 48, -7),
+  createData('Elizabeth', 48, -7),
+
 ];
 
 function App() {
@@ -31,8 +42,8 @@ function App() {
             <TableHead>
               <TableRow>
                 <TableCell>Team</TableCell>
-                <TableCell align="right">Total score</TableCell>
-                <TableCell align="right">Movement</TableCell>
+                <TableCell align="right">Week 1</TableCell>
+                <TableCell align="right">Score</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -41,8 +52,8 @@ function App() {
                   <TableCell component="th" scope="row">
                     {row.team}
                   </TableCell>
+                  <TableCell align="right">{row.week1}</TableCell>
                   <TableCell align="right">{row.score}</TableCell>
-                  <TableCell align="right">{row.movement}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
