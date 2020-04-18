@@ -11,23 +11,23 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-function createData(team, week1, score) {
-  return { team, week1, score };
+function createData(team, week1, week2, score) {
+  return { team, week1, week2, score };
 }
 
 const rows = [
-  createData('Nat & Jai', 65, 10),
-  createData('Olivia & Toby', 61, 6),
-  createData('Dru & Sarah', 60, 5),
-  createData('Sarah & Mike', 60, 5),
-  createData('Jenni & Dan', 57, 2),
-  createData('Guy & Siân', 53, -2),
-  createData('Charlie & Lynn', 52, -3),
-  createData('Amy & Will', 50, -5),
-  createData('Elliott', 50, -5),
-  createData('Deb & Warren', 48, -7),
-  createData('Elizabeth', 48, -7),
-
+  createData('Naomi', '-', 72, 15),
+  createData('Nat & Jai', 65, '-', 10),
+  createData('Jenni & Dan', 57, 65, 10),
+  createData('Dru & Sarah', 60, 61.5, 9.5),
+  createData('Olivia & Toby', 61, 56, 5),
+  createData('Sarah & Mike', 60, 56.5, 4.5),
+  createData('Beth & Drew', 48, 62, -2),
+  createData('Guy & Siân', 53, '-', -2),
+  createData('Amy & Will', 50, '-', -5),
+  createData('Elliott', 50, 51.5, -10.5),
+  createData('Charlie & Lynn', 52, 43, -17),
+  createData('Deb & Warren', 48, 43, -21),
 ];
 
 function App() {
@@ -43,6 +43,7 @@ function App() {
               <TableRow>
                 <TableCell>Team</TableCell>
                 <TableCell align="right">Week 1</TableCell>
+                <TableCell align="right">Week 2</TableCell>
                 <TableCell align="right">Score</TableCell>
               </TableRow>
             </TableHead>
@@ -53,6 +54,7 @@ function App() {
                     {row.team}
                   </TableCell>
                   <TableCell align="right">{row.week1}</TableCell>
+                  <TableCell align="right">{row.week2}</TableCell>
                   <TableCell align="right">{row.score}</TableCell>
                 </TableRow>
               ))}
